@@ -1,18 +1,18 @@
-import { MdDescription } from 'react-icons/md'
+import { MdInsertPhoto } from 'react-icons/md'
 import { slugIsUnique } from '../../lib/slugIsUnique'
 import { slugify } from '../../lib/slugify'
 
 export default {
-  name: 'page',
+  name: 'piece',
   type: 'document',
-  title: 'Page',
-  icon: MdDescription,
+  title: 'Piece',
+  icon: MdInsertPhoto,
   fields: [
     {
       name: 'title',
-      title: 'Page Title',
+      title: 'Piece Title',
       type: 'string',
-      description: 'Shows up in title of page',
+      description: 'Shows up in title of piece',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -42,7 +42,7 @@ export default {
       name: 'slices',
       type: 'array',
       title: 'Page builder',
-      of: [{ type: 'picture' }, { type: 'video' }, { type: 'richText' }],
+      of: [{ type: 'picture' }, { type: 'video' }],
     },
   ],
 }

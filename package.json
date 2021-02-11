@@ -5,7 +5,7 @@
   "description": "Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend",
   "main": "package.json",
   "author": "Jordan Egstad <jordanegstad@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build"
@@ -14,16 +14,21 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.3.3",
+    "@sanity/base": "^2.3.6",
+    "@sanity/color-input": "^2.2.6",
     "@sanity/components": "^2.2.6",
     "@sanity/core": "^2.3.3",
-    "@sanity/default-layout": "^2.3.3",
+    "@sanity/dashboard": "^2.2.6",
+    "@sanity/default-layout": "^2.3.6",
     "@sanity/default-login": "^2.2.6",
-    "@sanity/desk-tool": "^2.3.3",
+    "@sanity/desk-tool": "^2.3.6",
     "@sanity/vision": "^2.2.6",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
+    "react-icons": "^4.2.0",
+    "sanity-plugin-dashboard-widget-document-list": "^0.0.11",
+    "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-media": "^1.0.1"
   },
   "devDependencies": {},

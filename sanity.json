@@ -8,12 +8,16 @@
     "dataset": "production"
   },
   "plugins": [
+    "@sanity/dashboard",
     "@sanity/base",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "media"
+    "media",
+    "@sanity/color-input",
+    "dashboard-widget-netlify",
+    "dashboard-widget-document-list"
   ],
   "env": {
     "development": {
@@ -26,6 +30,14 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./lib/deskStructure.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./lib/dashboardConfig.js"
     }
   ]
 }

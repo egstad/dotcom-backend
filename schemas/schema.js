@@ -5,11 +5,15 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
+import piece from './documents/piece'
 import page from './documents/page'
+import tag from './documents/tag'
+import siteSettings from './documents/siteSettings'
 
 // Slices
 import picture from './slices/picture'
 import video from './slices/video'
+import richText from './slices/text'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -19,10 +23,14 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     // documents
+    piece,
     page,
+    tag,
+    siteSettings,
 
     // slices
     picture,
     video,
+    richText,
   ]),
 })
