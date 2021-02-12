@@ -17,7 +17,8 @@
     "media",
     "@sanity/color-input",
     "dashboard-widget-netlify",
-    "dashboard-widget-document-list"
+    "dashboard-widget-document-list",
+    "tabs"
   ],
   "env": {
     "development": {

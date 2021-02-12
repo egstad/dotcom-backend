@@ -1271,7 +1271,7 @@
     sanity-diff-patch "^1.0.9"
     styled-components "^5.2.1"
 
-"@sanity/form-builder@2.3.6":
+"@sanity/form-builder@2.3.6", "@sanity/form-builder@^2.0.1":
   version "2.3.6"
   resolved "https://registry.npmjs.org/@sanity/form-builder/-/form-builder-2.3.6.tgz#836013df45b4b5e199994a7d79f83a00f0053d96"
   dependencies:
@@ -2722,7 +2722,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -7111,6 +7111,10 @@ property-information@^5.0.0:
   dependencies:
     xtend "^4.0.0"
 
+proptypes@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/proptypes/-/proptypes-1.1.0.tgz#78b3828a5aa6bb1308939e0de3c6044dfd4bd239"
+
 proxy-addr@~2.0.5:
   version "2.0.6"
   resolved "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.6.tgz#fdc2336505447d3f2f2c638ed272caf614bbb2bf"
@@ -7295,6 +7299,15 @@ react-datepicker@^1.8.0:
     prop-types "^15.6.0"
     react-onclickoutside "^6.7.1"
     react-popper "^1.0.2"
+
+react-dom@^16.13.1:
+  version "16.14.0"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
 
 react-dom@^17.0:
   version "17.0.1"
@@ -7544,6 +7557,14 @@ react-window@1.8.6:
   dependencies:
     "@babel/runtime" "^7.0.0"
     memoize-one ">=3.1.1 <6"
+
+react@^16.13.1:
+  version "16.14.0"
+  resolved "https://registry.npmjs.org/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 react@^17.0:
   version "17.0.1"
@@ -7983,6 +8004,17 @@ sanity-plugin-media@^1.0.1:
     theme-ui "0.3.5"
     typesafe-actions "5.1.0"
     yup "0.32.8"
+
+sanity-plugin-tabs@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-tabs/-/sanity-plugin-tabs-2.0.1.tgz#24ba817a288a789cdc71238232a037f12b02937a"
+  dependencies:
+    "@sanity/form-builder" "^2.0.1"
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    proptypes "^1.1.0"
+    react "^16.13.1"
+    react-dom "^16.13.1"
 
 sax@~1.2.4:
   version "1.2.4"
