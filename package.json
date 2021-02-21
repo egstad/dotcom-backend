@@ -14,14 +14,14 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.3.6",
+    "@sanity/base": "^2.3.8",
     "@sanity/color-input": "^2.2.6",
     "@sanity/components": "^2.2.6",
-    "@sanity/core": "^2.3.3",
+    "@sanity/core": "^2.3.8",
     "@sanity/dashboard": "^2.2.6",
-    "@sanity/default-layout": "^2.3.6",
+    "@sanity/default-layout": "^2.3.8",
     "@sanity/default-login": "^2.2.6",
-    "@sanity/desk-tool": "^2.3.6",
+    "@sanity/desk-tool": "^2.3.8",
     "@sanity/vision": "^2.2.6",
     "prop-types": "^15.7",
     "react": "^17.0",
@@ -30,6 +30,7 @@
     "sanity-plugin-dashboard-widget-document-list": "^0.0.11",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-media": "^1.0.1",
+    "sanity-plugin-order-documents": "^0.0.12",
     "sanity-plugin-tabs": "^2.0.1"
   },
   "devDependencies": {},

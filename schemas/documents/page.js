@@ -10,13 +10,13 @@ export default {
   icon: MdDescription,
   fields: [
     {
-      name: 'tabs',
+      name: 'content',
       type: 'object',
       inputComponent: Tabs,
       fieldsets: [
         { name: 'info', title: 'Info', options: { sortOrder: 10 } },
         { name: 'content', title: 'Content', options: { sortOrder: 20 } },
-        { name: 'seo', title: 'SEO', options: { sortOrder: 30 } },
+        { name: 'sharing', title: 'Sharing', options: { sortOrder: 30 } },
       ],
       fields: [
         {
@@ -35,24 +35,12 @@ export default {
           fieldset: 'info',
           options: {
             source: (doc, options) => {
-              return doc.tabs.title
+              return doc.content.title
             },
             isUnique: slugIsUnique,
             slugify: slugify,
           },
           validation: (Rule) => Rule.required(),
-        },
-        {
-          title: 'Tags',
-          name: 'tags',
-          type: 'array',
-          fieldset: 'info',
-          of: [
-            {
-              type: 'reference',
-              to: [{ type: 'tag' }],
-            },
-          ],
         },
         {
           name: 'slices',
@@ -62,15 +50,40 @@ export default {
           fieldset: 'content',
           of: [{ type: 'picture' }, { type: 'video' }, { type: 'richText' }],
         },
+        {
+          name: 'socialTitle',
+          title: 'Social Title',
+          type: 'string',
+          description:
+            'Title for search, browser tab, and shared links. Prepends "Egstad" to page name by default. Max 95 chars.',
+          fieldset: 'sharing',
+          validation: (Rule) => Rule.max(95),
+        },
+        {
+          name: 'socialDescription',
+          title: 'Social Description',
+          type: 'text',
+          description:
+            'A tweet-sized description of the page visible in search and shared links. Max 200 chars.',
+          fieldset: 'sharing',
+          validation: (Rule) => Rule.max(200),
+        },
+        {
+          name: 'socialImage',
+          title: 'Social Image',
+          type: 'image',
+          description: 'Shows up on twitter, facebook, linkedin, etc.',
+          fieldset: 'sharing',
+        },
       ],
     },
   ],
 
   preview: {
     select: {
-      title: 'tabs.title',
-      author: 'tabs.author.name',
-      media: 'tabs.mainImage',
+      title: 'content.title',
+      author: 'content.author.name',
+      media: 'content.mainImage',
     },
     prepare(selection) {
       const { author } = selection
