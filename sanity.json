@@ -18,7 +18,8 @@
     "@sanity/color-input",
     "dashboard-widget-netlify",
     "dashboard-widget-document-list",
-    "tabs"
+    "tabs",
+    "order-documents"
   ],
   "env": {
     "development": {
