@@ -1,3 +1,5 @@
+import videoEgstadCdn from '../../lib/videoEgstadCdn'
+
 export default {
   name: 'video',
   type: 'object',
@@ -5,14 +7,30 @@ export default {
   description: 'A video',
   fields: [
     {
-      name: 'videoLabel',
+      name: 'url',
+      description: 'Paste the S3 object key here',
       type: 'string',
-      title: 'Video Label',
+      title: 'Default Video',
+      validation: (Rule) => Rule.error('Default Video field is required!').required(),
+      inputComponent: videoEgstadCdn
     },
     {
-      name: 'url',
+      name: 'alt',
       type: 'string',
-      title: 'URL',
+      title: 'Alternative text',
+      validation: (Rule) =>
+        Rule.error('You have to fill out the alternative text.').required(),
+      description: 'Describe image for those using screen readers. Important for SEO and accessiblity.',
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
+      name: 'urlMobile',
+      description: 'Optional video for small devices. Paste the S3 object key here',
+      type: 'string',
+      title: 'Small Video',
+      inputComponent: videoEgstadCdn
     },
   ],
 }
