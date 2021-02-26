@@ -14,6 +14,7 @@ import siteSettings from './documents/siteSettings'
 import picture from './slices/picture'
 import video from './slices/video'
 import richText from './slices/text'
+import themePicker from './slices/themePicker'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,5 +33,6 @@ export default createSchema({
     picture,
     video,
     richText,
+    themePicker,
   ]),
 })

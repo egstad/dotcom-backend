@@ -61,6 +61,12 @@ export default {
           ],
         },
         {
+          title: 'Theme',
+          name: 'theme',
+          type: 'themePicker',
+          fieldset: 'info',
+        },
+        {
           name: 'slices',
           type: 'array',
           title: 'Content',
