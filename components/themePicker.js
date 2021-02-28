@@ -69,9 +69,10 @@ export default class Slider extends React.Component {
               style={{
                 width: '100%',
                 height: '100%',
+                border: '1px solid rgba(123, 140, 168, 1)',
                 background: isValid(value)
                   ? value
-                  : 'repeating-conic-gradient(#cccccc 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                  : 'repeating-conic-gradient(rgba(123, 140, 168, 0.25) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
               }}
             ></div>
           </Card>

@@ -1,9 +1,11 @@
 import videoEgstadCdn from '../../components/videoEgstadCdn'
+import { MdPlayCircleFilled } from 'react-icons/md'
 
 export default {
   name: 'video',
   type: 'object',
   title: 'Video',
+  icon: MdPlayCircleFilled,
   description: 'A video',
   fields: [
     {

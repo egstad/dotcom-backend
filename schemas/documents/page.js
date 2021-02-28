@@ -43,12 +43,23 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
+          title: 'Theme',
+          name: 'theme',
+          type: 'themePicker',
+          fieldset: 'info',
+        },
+        {
           name: 'slices',
           type: 'array',
           title: 'Content',
           description: 'Add a picture, video, text, w/e tf!',
           fieldset: 'content',
-          of: [{ type: 'picture' }, { type: 'video' }, { type: 'richText' }],
+          of: [
+            { type: 'picture' },
+            { type: 'video' },
+            { type: 'themeScroller' },
+            { type: 'richText' },
+          ],
         },
         {
           name: 'socialTitle',

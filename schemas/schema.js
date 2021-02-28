@@ -15,6 +15,7 @@ import picture from './slices/picture'
 import video from './slices/video'
 import richText from './slices/text'
 import themePicker from './slices/themePicker'
+import themeScroller from './slices/themeScroller'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,5 +35,6 @@ export default createSchema({
     video,
     richText,
     themePicker,
+    themeScroller,
   ]),
 })

@@ -1,7 +1,10 @@
+import { MdImage } from 'react-icons/md'
+
 export default {
   name: 'picture',
   title: 'Image',
   type: 'image',
+  icon: MdImage,
   description: 'An image',
   fields: [
     {
@@ -27,7 +30,14 @@ export default {
   preview: {
     select: {
       imageUrl: 'asset.url',
-      title: 'caption',
+      caption: 'caption',
+      alt: 'alt',
+    },
+    prepare({ alt, caption }) {
+      return {
+        title: 'Picture',
+        subtitle: `${caption ? caption : alt}`,
+      }
     },
   },
 }
