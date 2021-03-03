@@ -62,7 +62,12 @@ export default {
           title: 'Content',
           description: 'Add a picture, video, text, w/e tf!',
           fieldset: 'content',
-          of: [{ type: 'picture' }, { type: 'video' }, { type: 'richText' }],
+          of: [
+            { type: 'picture' },
+            { type: 'video' },
+            { type: 'richText' },
+            { type: 'themeScroller' },
+          ],
           validation: (Rule) =>
             Rule.required().error('Add some content, please!'),
         },
