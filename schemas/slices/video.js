@@ -18,14 +18,6 @@ export default {
       inputComponent: videoEgstadCdn,
     },
     {
-      name: 'urlMobile',
-      description:
-        'Optional video for small devices. Paste the S3 object key here',
-      type: 'string',
-      title: 'Small Video',
-      inputComponent: videoEgstadCdn,
-    },
-    {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
@@ -35,6 +27,28 @@ export default {
         'Describe image for those using screen readers. Important for SEO and accessiblity.',
       options: {
         isHighlighted: true,
+      },
+    },
+    {
+      title: 'Caption',
+      name: 'caption',
+      type: 'string',
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
+      title: 'Size',
+      name: 'size',
+      description: 'What size should this video be?',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Small', value: 'small' },
+          { title: 'Medium', value: 'medium' },
+          { title: 'Large', value: 'large' },
+          { title: 'Full', value: 'full' },
+        ],
       },
     },
     {
@@ -76,6 +90,18 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      caption: 'caption',
+      alt: 'alt',
+    },
+    prepare({ alt, caption }) {
+      return {
+        title: 'Video',
+        subtitle: `${caption ? caption : alt}`,
+      }
+    },
+  },
 }
 
 // Mute

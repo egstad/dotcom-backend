@@ -29,15 +29,15 @@ export default {
           name: 'title',
           title: 'Page Title',
           type: 'string',
-          description: 'Shows up in title of page',
+          description: 'Shows up in tab bar, Google, etc.',
           fieldset: 'info',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) => Rule.required().error('Add a Title, please!'),
         },
         {
           title: 'Slug',
           name: 'slug',
           type: 'slug',
-          description: 'for url',
+          description: 'This is used to create the url',
           fieldset: 'info',
           options: {
             source: (doc, options) => {
@@ -46,11 +46,22 @@ export default {
             isUnique: slugIsUnique,
             slugify: slugify,
           },
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) => Rule.required().error('Choose a Slug, please!'),
+        },
+        {
+          title: 'Client',
+          name: 'client',
+          description: 'Register and then select the client here',
+          type: 'reference',
+          fieldset: 'info',
+          to: [{ type: 'client' }],
+          validation: (Rule) =>
+            Rule.required().error('Choose a client, please!'),
         },
         {
           title: 'Tags',
           name: 'tags',
+          description: 'How would you categorize this?',
           type: 'array',
           fieldset: 'info',
           of: [
@@ -59,20 +70,40 @@ export default {
               to: [{ type: 'tag' }],
             },
           ],
+          validation: (Rule) =>
+            Rule.required().error('Choose some tags, please!'),
+        },
+        {
+          title: 'Date',
+          description: 'When was this work commissioned/created?',
+          name: 'date',
+          type: 'datetime',
+          fieldset: 'info',
+          options: {
+            dateFormat: 'YYYY-MM-DD',
+            timeFormat: 'hh:mm',
+            timeStep: 60,
+            calendarTodayLabel: 'Today',
+          },
+          validation: (Rule) => Rule.required().error('Choose a Date, please!'),
         },
         {
           title: 'Theme',
+          description: 'Register a color theme here',
           name: 'theme',
           type: 'themePicker',
           fieldset: 'info',
         },
         {
           name: 'slices',
+          description: 'Choose content below',
           type: 'array',
           title: 'Content',
           description: 'Add a picture, video, text, w/e tf!',
           fieldset: 'content',
           of: [{ type: 'picture' }, { type: 'video' }, { type: 'richText' }],
+          validation: (Rule) =>
+            Rule.required().error('Add some content, please!'),
         },
         {
           name: 'socialTitle',
@@ -81,7 +112,10 @@ export default {
           description:
             'Title for search, browser tab, and shared links. Prepends "Egstad" to page name by default. Max 95 chars.',
           fieldset: 'sharing',
-          validation: (Rule) => Rule.max(95),
+          validation: (Rule) =>
+            Rule.required()
+              .max(95)
+              .error('Add a Social Title, please! 95 character limit.'),
         },
         {
           name: 'socialDescription',
@@ -90,7 +124,10 @@ export default {
           description:
             'A tweet-sized description of the page visible in search and shared links. Max 200 chars.',
           fieldset: 'sharing',
-          validation: (Rule) => Rule.max(200),
+          validation: (Rule) =>
+            Rule.required()
+              .max(200)
+              .error('Add a Social Description, please! 200 character limit.'),
         },
         {
           name: 'socialImage',
@@ -98,21 +135,16 @@ export default {
           type: 'image',
           description: 'Shows up on twitter, facebook, linkedin, etc.',
           fieldset: 'sharing',
+          validation: (Rule) =>
+            Rule.required().error('Choose a Social Image, please!'),
         },
       ],
     },
   ],
-
   preview: {
     select: {
       title: 'content.title',
       media: 'content.socialImage',
-    },
-    prepare(selection) {
-      const { author } = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
     },
   },
 }

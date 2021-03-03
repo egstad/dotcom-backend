@@ -26,6 +26,21 @@ export default {
         isHighlighted: true,
       },
     },
+    {
+      title: 'Size',
+      name: 'size',
+      description: 'What size should this image be?',
+      type: 'string',
+      options: {
+        isHighlighted: true,
+        list: [
+          { title: 'Small', value: 'small' },
+          { title: 'Medium', value: 'medium' },
+          { title: 'Large', value: 'large' },
+          { title: 'Full', value: 'full' },
+        ],
+      },
+    },
   ],
   preview: {
     select: {

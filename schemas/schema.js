@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Document types
 import piece from './documents/piece'
 import page from './documents/page'
+import client from './documents/client'
 import tag from './documents/tag'
 import siteSettings from './documents/siteSettings'
 
@@ -28,6 +29,7 @@ export default createSchema({
     piece,
     page,
     tag,
+    client,
     siteSettings,
 
     // slices
