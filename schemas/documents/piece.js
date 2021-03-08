@@ -112,10 +112,6 @@ export default {
           description:
             'Title for search, browser tab, and shared links. Prepends "Egstad" to page name by default. Max 95 chars.',
           fieldset: 'sharing',
-          validation: (Rule) =>
-            Rule.required()
-              .max(95)
-              .error('Add a Social Title, please! 95 character limit.'),
         },
         {
           name: 'socialDescription',
@@ -124,10 +120,6 @@ export default {
           description:
             'A tweet-sized description of the page visible in search and shared links. Max 200 chars.',
           fieldset: 'sharing',
-          validation: (Rule) =>
-            Rule.required()
-              .max(200)
-              .error('Add a Social Description, please! 200 character limit.'),
         },
         {
           name: 'socialImage',
@@ -135,8 +127,6 @@ export default {
           type: 'image',
           description: 'Shows up on twitter, facebook, linkedin, etc.',
           fieldset: 'sharing',
-          validation: (Rule) =>
-            Rule.required().error('Choose a Social Image, please!'),
         },
       ],
     },

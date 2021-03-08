@@ -18,6 +18,15 @@ export default {
       inputComponent: videoEgstadCdn,
     },
     {
+      title: 'Poster Image',
+      description:
+        'Placeholder image for video. Use the same width and height as video.',
+      type: 'image',
+      name: 'poster',
+      validation: (Rule) =>
+        Rule.error('You have to add a poster image.').required(),
+    },
+    {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
