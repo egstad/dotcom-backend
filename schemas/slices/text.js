@@ -1,4 +1,20 @@
-import { MdFormatAlignLeft } from "react-icons/md";
+import React from "react";
+import ExternalLinkRenderer from "../../components/ExternalLinkRenderer";
+import {
+  MdFormatAlignLeft,
+  MdLink,
+  MdBorderColor,
+  MdFormatItalic,
+  MdFormatBold,
+  MdCode,
+  MdFormatUnderlined,
+  MdFormatListBulleted,
+  MdFormatListNumbered,
+} from "react-icons/md";
+
+const highlightRender = (props) => (
+  <span style={{ backgroundColor: "#EAD838" }}>{props.children}</span>
+);
 
 export default {
   title: "Text",
@@ -22,16 +38,59 @@ export default {
             { title: "Normal", value: "normal" },
           ],
           lists: [
-            { title: "Unordered", value: "bullet" },
-            { title: "Ordered", value: "number" },
+            {
+              title: "Unordered",
+              value: "bullet",
+              blockEditor: {
+                icon: MdFormatListBulleted,
+              },
+            },
+            {
+              title: "Ordered",
+              value: "number",
+              blockEditor: {
+                icon: MdFormatListNumbered,
+              },
+            },
           ],
           marks: {
             decorators: [
-              { title: "Strong", value: "strong" },
-              { title: "Emphasis", value: "em" },
-              { title: "Code", value: "code" },
-              { title: "Highlight", value: "highlight" },
-              { title: "Underline", value: "underline" },
+              {
+                title: "Strong",
+                value: "strong",
+                blockEditor: {
+                  icon: MdFormatBold,
+                },
+              },
+              {
+                title: "Emphasis",
+                value: "em",
+                blockEditor: {
+                  icon: MdFormatItalic,
+                },
+              },
+              {
+                title: "Code",
+                value: "code",
+                blockEditor: {
+                  icon: MdCode,
+                },
+              },
+              {
+                title: "Highlight",
+                value: "highlight",
+                blockEditor: {
+                  icon: MdBorderColor,
+                  render: highlightRender,
+                },
+              },
+              {
+                title: "Underline",
+                value: "underline",
+                blockEditor: {
+                  icon: MdFormatUnderlined,
+                },
+              },
             ],
             annotations: [
               {
@@ -55,6 +114,10 @@ export default {
                 name: "internalLink",
                 type: "object",
                 title: "Internal Link",
+                blockEditor: {
+                  icon: MdLink,
+                  render: ExternalLinkRenderer,
+                },
                 fields: [
                   {
                     name: "item",
