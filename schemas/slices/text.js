@@ -26,6 +26,12 @@ export default {
             { title: "Ordered", value: "number" },
           ],
           marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+              { title: "Code", value: "code" },
+              { title: "Highlight", value: "highlight" },
+            ],
             annotations: [
               {
                 name: "link",
