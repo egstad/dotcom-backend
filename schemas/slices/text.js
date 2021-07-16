@@ -1,51 +1,58 @@
-import { MdFormatAlignLeft } from 'react-icons/md'
+import { MdFormatAlignLeft } from "react-icons/md";
 
 export default {
-  title: 'Text',
-  name: 'richText',
-  type: 'object',
+  title: "Text",
+  name: "richText",
+  type: "object",
   icon: MdFormatAlignLeft,
   fields: [
     {
-      name: 'content',
-      type: 'array',
+      name: "content",
+      type: "array",
       of: [
         {
-          type: 'block',
+          type: "block",
           styles: [
-            { title: 'Heading', value: 'h2' },
-            { title: 'Subhead', value: 'h3' },
-            { title: 'Small', value: 'h4' },
-            { title: 'Normal', value: 'normal' },
+            { title: "H1", value: "h1" },
+            { title: "H2", value: "h2" },
+            { title: "H3", value: "h3" },
+            { title: "H4", value: "h4" },
+            { title: "H5", value: "h5" },
+            { title: "H6", value: "h6" },
+            { title: "Normal", value: "normal" },
+          ],
+          lists: [
+            { title: "Unordered", value: "bullet" },
+            { title: "Ordered", value: "number" },
           ],
           marks: {
             annotations: [
               {
-                name: 'link',
-                type: 'object',
-                title: 'URL',
+                name: "link",
+                type: "object",
+                title: "URL",
                 fields: [
                   {
-                    title: 'URL',
-                    name: 'href',
-                    type: 'url',
+                    title: "URL",
+                    name: "href",
+                    type: "url",
                   },
                   {
-                    title: 'Open in new tab',
-                    name: 'blank',
-                    type: 'boolean',
+                    title: "Open in new tab",
+                    name: "blank",
+                    type: "boolean",
                   },
                 ],
               },
               {
-                name: 'internalLink',
-                type: 'object',
-                title: 'Internal Link',
+                name: "internalLink",
+                type: "object",
+                title: "Internal Link",
                 fields: [
                   {
-                    name: 'item',
-                    type: 'reference',
-                    to: [{ type: 'piece' }, { type: 'page' }],
+                    name: "item",
+                    type: "reference",
+                    to: [{ type: "piece" }, { type: "page" }],
                   },
                 ],
               },
@@ -55,4 +62,4 @@ export default {
       ],
     },
   ],
-}
+};
