@@ -31,6 +31,7 @@ export default {
               { title: "Emphasis", value: "em" },
               { title: "Code", value: "code" },
               { title: "Highlight", value: "highlight" },
+              { title: "Underline", value: "underline" },
             ],
             annotations: [
               {
