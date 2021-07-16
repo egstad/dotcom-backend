@@ -18,9 +18,24 @@ export default {
       inputComponent: videoEgstadCdn,
     },
     {
+<<<<<<< HEAD
       name: "alt",
       type: "string",
       title: "Alternative text",
+=======
+      title: 'Poster Image',
+      description:
+        'Placeholder image for video. Use the same width and height as video.',
+      type: 'image',
+      name: 'poster',
+      validation: (Rule) =>
+        Rule.error('You have to add a poster image.').required(),
+    },
+    {
+      name: 'alt',
+      type: 'string',
+      title: 'Alternative text',
+>>>>>>> dd54cf8a1cca7df891c560e43dc0ff8809d31e5a
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
       description:
