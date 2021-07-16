@@ -18,14 +18,11 @@
     "@sanity/color-input",
     "dashboard-widget-netlify",
     "dashboard-widget-document-list",
-    "tabs",
-    "order-documents"
+    "tabs"
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
