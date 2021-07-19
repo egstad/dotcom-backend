@@ -33,7 +33,9 @@
     "sanity-plugin-order-documents": "^0.0.12",
     "sanity-plugin-tabs": "^2.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@sanity/cli": "^2.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/egstad/dotcom-backend.git"
