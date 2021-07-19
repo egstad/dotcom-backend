@@ -49,6 +49,12 @@ export default {
           validation: (Rule) => Rule.required().error("Choose a Slug, please!"),
         },
         {
+          name: "favoriteColor",
+          title: "Favorite color",
+          type: "color",
+          fieldset: "info",
+        },
+        {
           title: "Theme",
           description: "Register a color theme here",
           name: "theme",
