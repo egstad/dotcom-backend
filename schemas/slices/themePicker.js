@@ -1,91 +1,38 @@
-import themePicker from '../../components/themePicker'
+// currently deprecated
+// in favor of sanity's default color field
 
 export default {
-  name: 'themePicker',
-  title: 'Color Theme',
-  type: 'object',
+  name: "themePicker",
+  title: "Color Theme",
+  type: "object",
   fields: [
     {
-      name: 'background',
-      title: 'Background',
-      type: 'string',
+      name: "background",
+      type: "color",
+      title: "Background",
       validation: (Rule) =>
-        Rule.required().custom((color) => {
-          if (!color || typeof color !== 'string')
-            return 'Hex needs to be a string'
-
-          // Validate hex values
-          if (color.substring(0, 1) === '#') color = color.substring(1)
-
-          switch (color.length) {
-            case 3:
-              return /^[0-9A-F]{3}$/i.test(color)
-            case 6:
-              return /^[0-9A-F]{6}$/i.test(color)
-            case 8:
-              return /^[0-9A-F]{8}$/i.test(color)
-            default:
-              return "This isn't a valid HEX code, baby!"
-          }
-        }),
-      inputComponent: themePicker,
+        Rule.required().warning("Background color is missing in Themer!"),
     },
     {
-      name: 'foreground',
-      title: 'Foreground',
-      type: 'string',
+      name: "foreground",
+      type: "color",
+      title: "Foreground",
       validation: (Rule) =>
-        Rule.required().custom((color) => {
-          if (!color || typeof color !== 'string')
-            return 'Hex needs to be a string'
-
-          // Validate hex values
-          if (color.substring(0, 1) === '#') color = color.substring(1)
-
-          switch (color.length) {
-            case 3:
-              return /^[0-9A-F]{3}$/i.test(color)
-            case 6:
-              return /^[0-9A-F]{6}$/i.test(color)
-            case 8:
-              return /^[0-9A-F]{8}$/i.test(color)
-            default:
-              return "This isn't a valid HEX code, baby!"
-          }
-        }),
-      inputComponent: themePicker,
+        Rule.required().warning("Foreground color is missing in Themer!"),
     },
     {
-      name: 'accent',
-      title: 'Accent',
-      type: 'string',
+      name: "accent",
+      type: "color",
+      title: "Accent",
       validation: (Rule) =>
-        Rule.required().custom((color) => {
-          if (!color || typeof color !== 'string')
-            return 'Hex needs to be a string'
-
-          // Validate hex values
-          if (color.substring(0, 1) === '#') color = color.substring(1)
-
-          switch (color.length) {
-            case 3:
-              return /^[0-9A-F]{3}$/i.test(color)
-            case 6:
-              return /^[0-9A-F]{6}$/i.test(color)
-            case 8:
-              return /^[0-9A-F]{8}$/i.test(color)
-            default:
-              return "This isn't a valid HEX code, baby!"
-          }
-        }),
-      inputComponent: themePicker,
+        Rule.required().warning("Accent color is missing in Themer!"),
     },
   ],
   preview: {
     select: {
-      background: 'background',
-      foreground: 'foreground',
-      accent: 'accent',
+      background: "background",
+      foreground: "foreground",
+      accent: "accent",
     },
   },
-}
+};

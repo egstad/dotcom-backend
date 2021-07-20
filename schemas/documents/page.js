@@ -49,14 +49,8 @@ export default {
           validation: (Rule) => Rule.required().error("Choose a Slug, please!"),
         },
         {
-          name: "favoriteColor",
-          title: "Favorite color",
-          type: "color",
-          fieldset: "info",
-        },
-        {
           title: "Theme",
-          description: "Register a color theme here",
+          description: "Register the default color theme for this page.",
           name: "theme",
           type: "themePicker",
           fieldset: "info",
@@ -117,6 +111,14 @@ export default {
     select: {
       title: "content.title",
       media: "content.socialImage",
+      subtitle: "content.slug.current",
+    },
+    prepare(selection) {
+      return {
+        title: selection.title,
+        media: selection.media,
+        subtitle: selection.subtitle,
+      };
     },
   },
 };
