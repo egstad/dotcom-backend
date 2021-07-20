@@ -34,12 +34,22 @@ export default {
       theme: "theme",
     },
     prepare({ theme }) {
-      const hexBG = theme.background.hex;
-      const hexFG = theme.foreground.hex;
-      const hexAC = theme.accent.hex;
+      const hexBG = theme.background ? theme.background.hex : null;
+      const hexFG = theme.foreground ? theme.foreground.hex : null;
+      const hexAC = theme.accent ? theme.accent.hex : null;
+
+      const subtitle = () => {
+        let output = [];
+        if (hexBG) output.push(`Background: ${hexBG}`);
+        if (hexFG) output.push(`Foreground: ${hexFG}`);
+        if (hexAC) output.push(`Accent: ${hexAC}`);
+
+        return output.join(", ");
+      };
+
       return {
         title: "Themer",
-        subtitle: `Background: ${hexBG}, Foreground: ${hexFG}, Accent: ${hexAC}`,
+        subtitle: subtitle(),
       };
     },
   },
