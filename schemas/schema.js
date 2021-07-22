@@ -5,18 +5,36 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // Document types
-import piece from "./documents/piece";
+import homepage from "./documents/homepage";
+import about from "./documents/about";
+import work from "./documents/work";
 import page from "./documents/page";
+import piece from "./documents/piece";
 import client from "./documents/client";
 import tag from "./documents/tag";
 import siteSettings from "./documents/siteSettings";
 
-// Slices
+// Abstract, reusable document fields
+import docTitle from "./slices/docTitle";
+import docSlug from "./slices/docSlug";
+import docTheme from "./slices/docTheme";
+import docDate from "./slices/docDate";
+import docClients from "./slices/docClients";
+import docTags from "./slices/docTags";
+import docSocial from "./slices/docSocial";
+
+// Content Slices
 import picture from "./slices/picture";
 import video from "./slices/video";
+import pieces from "./slices/pieces";
 import richText from "./slices/text";
 import themePicker from "./slices/themePicker";
 import themeScroller from "./slices/themeScroller";
+import contentWork from "./slices/contentWork";
+import contentPieces from "./slices/contentPieces";
+
+// Site Settings
+// import siteNavigation from "./slices/siteNavigation";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,17 +44,33 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     // documents
-    piece,
+    homepage,
+    about,
+    work,
     page,
+    piece,
     tag,
     client,
     siteSettings,
 
+    // modules
+    docTitle,
+    docSlug,
+    docTheme,
+    docDate,
+    docSocial,
+    docClients,
+    docTags,
+
     // slices
     picture,
+    pieces,
     video,
     richText,
     themePicker,
     themeScroller,
+    contentWork,
+    contentPieces,
+    // siteNavigation,
   ]),
 });

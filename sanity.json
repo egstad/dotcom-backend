@@ -18,7 +18,9 @@
     "@sanity/color-input",
     "dashboard-widget-netlify",
     "dashboard-widget-document-list",
-    "tabs"
+    "order-documents",
+    "tabs",
+    "egstad-logo"
   ],
   "env": {
     "development": {
@@ -37,6 +39,14 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./lib/dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./lib/assetSources.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./lib/cssOverrides.css"
     }
   ]
 }

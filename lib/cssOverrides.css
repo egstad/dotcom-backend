@@ -1,0 +1,51 @@
+/* https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/base/src/styles/variables */
+
+:root {
+  /* Font families */
+  --font-family-sans-serif: "Agipo", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-serif: Georgia, "Times New Roman", Times, serif;
+  --font-family-monospace: -apple-system-ui-monospace, "SF Mono", Menlo, Monaco,
+    Consolas, monospace;
+  --font-family-base: var(--font-family-sans-serif);
+}
+
+/* Let's use monospace for the slug, plz */
+[data-testid="input-slug"] input {
+  font-family: var(--font-family-monospace);
+  font-size: var(--font-size-base) !important;
+}
+
+/*
+ * Let's help break the sanity form up into some
+ * digestible sections that are easier to parse.
+ */
+
+div[class*="formView"] [data-testid="input-title"]::before,
+div[class*="formView"] [data-testid="input-content"]::before,
+div[class*="formView"] [data-testid="input-social"]::before {
+  margin-top: calc(2em + 5vmin);
+  margin-bottom: 0.4em;
+  font-family: "Scotch Modern";
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  display: block;
+  font-size: clamp(44px, 5vw, 64px);
+  text-align: center;
+  width: 100%;
+}
+
+div[class*="formView"] [data-testid="input-title"]::before {
+  content: "Document";
+  margin-top: 1em;
+}
+div[class*="formView"] [data-testid="input-content"]::before {
+  content: "Pieces";
+}
+div[class*="formView"] [data-testid="input-content"]::before {
+  content: "Content";
+}
+div[class*="formView"] [data-testid="input-social"]::before {
+  content: "Social & SEO";
+}
