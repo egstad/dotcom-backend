@@ -1,7 +1,7 @@
 export default {
   title: "Tags",
   name: "docTags",
-  description: "Select some tag(s) that describe this Piece.",
+  description: "What tag(s) would you use to describe this?",
   type: "array",
   of: [
     {

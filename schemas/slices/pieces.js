@@ -27,7 +27,7 @@ export default {
       title: "Width",
       name: "size",
       type: "string",
-      description: "Choose a width that feels right",
+      description: "What size would you like this to appear at?",
       validation: (Rule) => Rule.required().error(`Gotta choose a width!`),
       options: {
         list: [
@@ -42,16 +42,20 @@ export default {
   ],
   preview: {
     select: {
-      title: "data.content.title",
-      media: "data.content.socialImage",
+      title: "data.title",
+      titleOverride: "title",
+      media: "data.social.socialImage",
       subtitle: "size",
+      test: "data",
     },
     prepare(selection) {
+      const { title, titleOverride, media, subtitle, test } = selection;
       console.log(selection);
+
       return {
-        title: selection.title,
-        media: selection.media,
-        subtitle: `Size: ${selection.subtitle}`,
+        title: titleOverride ? titleOverride : title,
+        media: media,
+        subtitle: subtitle ? `Size: ${subtitle}` : null,
       };
     },
   },

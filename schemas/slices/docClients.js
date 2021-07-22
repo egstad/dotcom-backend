@@ -1,7 +1,7 @@
 export default {
   title: "Client",
   name: "docClients",
-  description: "Select client(s), if applicable.",
+  description: "What client(s), if any, was this for?",
   type: "array",
   of: [
     {

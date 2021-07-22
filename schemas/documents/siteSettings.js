@@ -41,21 +41,4 @@ export default {
       ],
     },
   ],
-  preview: {
-    select: {
-      // title: "siteNavigation",
-      // titleLink1: "primaryNavigation.0.linkRef.title",
-      // titleLink2: "primaryNavigation.1.linkRef.title",
-      // titleLink3: "primaryNavigation.2.linkRef.title",
-      // titleLink4: "primaryNavigation.3.linkRef.title",
-    },
-    prepare(selection) {
-      console.log(selection);
-      // return {
-      //   title: selection.title,
-      //   media: selection.media,
-      //   subtitle: selection.subtitle,
-      // };
-    },
-  },
 };

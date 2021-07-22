@@ -1,6 +1,5 @@
 const validateHex = (Rule) =>
   Rule.required().custom((color) => {
-    console.log(Rule);
     if (!color || typeof color !== "string") return "Hex needs to be a string";
 
     // Validate hex values
