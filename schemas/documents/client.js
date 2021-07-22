@@ -1,20 +1,21 @@
-import { MdPeople } from 'react-icons/md'
+import React from "react";
+import { Text } from "@sanity/ui";
 
 export default {
-  name: 'client',
-  type: 'document',
-  title: 'Clients',
-  icon: MdPeople,
+  name: "client",
+  type: "document",
+  title: "Clients",
+  icon: () => <Text size={4}>👯</Text>,
   fields: [
     {
-      name: 'clientName',
-      type: 'string',
+      name: "clientName",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'clientName',
+      title: "clientName",
     },
   },
-}
+};

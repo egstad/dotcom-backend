@@ -2,11 +2,12 @@ import React from "react";
 import { Text } from "@sanity/ui";
 
 export default {
-  name: "page",
+  name: "about",
   type: "document",
-  title: "Pages",
+  title: "About",
+  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
   icon: () => {
-    return <Text size={4}>📝</Text>;
+    return <Text size={4}>💅🏼</Text>;
   },
   fields: [
     { name: "title", type: "docTitle" },

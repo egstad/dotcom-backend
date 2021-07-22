@@ -1,13 +1,16 @@
-import { MdInsertPhoto } from "react-icons/md";
 import { slugIsUnique } from "../../lib/slugIsUnique";
 import { slugify } from "../../lib/slugify";
 import Tabs from "sanity-plugin-tabs";
+import React from "react";
+import { Text } from "@sanity/ui";
 
 export default {
   name: "piece",
   type: "document",
-  title: "Piece",
-  icon: MdInsertPhoto,
+  title: "Pieces",
+  icon: () => {
+    return <Text size={4}>🎨</Text>;
+  },
   fields: [
     {
       name: "order",
