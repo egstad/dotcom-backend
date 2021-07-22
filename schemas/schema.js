@@ -18,6 +18,9 @@ import siteSettings from "./documents/siteSettings";
 import docTitle from "./slices/docTitle";
 import docSlug from "./slices/docSlug";
 import docTheme from "./slices/docTheme";
+import docDate from "./slices/docDate";
+import docClients from "./slices/docClients";
+import docTags from "./slices/docTags";
 import docSocial from "./slices/docSocial";
 
 // Content Slices
@@ -28,6 +31,7 @@ import richText from "./slices/text";
 import themePicker from "./slices/themePicker";
 import themeScroller from "./slices/themeScroller";
 import contentWork from "./slices/contentWork";
+import contentPieces from "./slices/contentPieces";
 
 // Site Settings
 // import siteNavigation from "./slices/siteNavigation";
@@ -53,7 +57,10 @@ export default createSchema({
     docTitle,
     docSlug,
     docTheme,
+    docDate,
     docSocial,
+    docClients,
+    docTags,
 
     // slices
     picture,
@@ -63,6 +70,7 @@ export default createSchema({
     themePicker,
     themeScroller,
     contentWork,
+    contentPieces,
     // siteNavigation,
   ]),
 });

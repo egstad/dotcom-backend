@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       title: "Reference",
-      name: "ref",
+      name: "data",
       type: "reference",
       description: "Select a piece below",
       to: [{ type: "piece" }],
@@ -25,26 +25,26 @@ export default {
     },
     {
       title: "Width",
-      name: "width",
+      name: "size",
       type: "string",
       description: "Choose a width that feels right",
       validation: (Rule) => Rule.required().error(`Gotta choose a width!`),
-      // options: {
-      //   list: [
-      //     { title: "Small", value: "small" },
-      //     { title: "Medium", value: "medium" },
-      //     { title: "Large", value: "large" },
-      //     { title: "X-Large", value: "xlarge" },
-      //     { title: "Full", value: "full" },
-      //   ],
-      // },
+      options: {
+        list: [
+          { title: "Small", value: "small" },
+          { title: "Medium", value: "medium" },
+          { title: "Large", value: "large" },
+          { title: "X-Large", value: "xlarge" },
+          { title: "Full", value: "full" },
+        ],
+      },
     },
   ],
   preview: {
     select: {
-      title: "ref.content.title",
-      media: "ref.content.socialImage",
-      subtitle: "width",
+      title: "data.content.title",
+      media: "data.content.socialImage",
+      subtitle: "size",
     },
     prepare(selection) {
       console.log(selection);

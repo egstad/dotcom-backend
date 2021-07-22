@@ -47,20 +47,6 @@ export default {
       },
     },
     {
-      title: "Size",
-      name: "size",
-      description: "What size should this video be?",
-      type: "string",
-      options: {
-        list: [
-          { title: "Small", value: "small" },
-          { title: "Medium", value: "medium" },
-          { title: "Large", value: "large" },
-          { title: "Full", value: "full" },
-        ],
-      },
-    },
-    {
       title: "Playback Settings",
       name: "settings",
       type: "object",
@@ -101,13 +87,16 @@ export default {
   ],
   preview: {
     select: {
-      caption: "caption",
+      media: "poster",
       alt: "alt",
+      caption: "caption",
     },
-    prepare({ alt, caption }) {
+    prepare(selection) {
+      const { media, alt, caption } = selection;
+
       return {
-        title: "Video",
-        subtitle: `${caption ? caption : alt}`,
+        title: `🍿 VIDEO${caption ? ": " + caption : ": " + alt}`,
+        media: media,
       };
     },
   },
