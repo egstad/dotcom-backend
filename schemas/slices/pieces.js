@@ -44,17 +44,41 @@ export default {
     select: {
       title: "data.title",
       titleOverride: "title",
-      media: "data.social.socialImage",
-      subtitle: "size",
-      test: "data",
+      subtitle: "slug.current",
+      type: "data.content.0._type",
+      mediaSlideshow: "data.content.0.slides.0.asset",
+      mediaPicture: "data.content.0.asset",
+      mediaVideo: "data.content.0.poster.asset",
     },
     prepare(selection) {
-      const { title, titleOverride, media, subtitle, test } = selection;
-      console.log(selection);
+      const {
+        title,
+        titleOverride,
+        subtitle,
+        type,
+        mediaSlideshow,
+        mediaPicture,
+        mediaVideo,
+      } = selection;
+
+      let preface;
+      switch (type) {
+        case "slideshow":
+          preface = "📽";
+          break;
+        case "video":
+          preface = "🍿";
+          break;
+        case "picture":
+          preface = "📸";
+          break;
+      }
 
       return {
-        title: titleOverride ? titleOverride : title,
-        media: media,
+        title: `${preface} ${type.toUpperCase()} • ${
+          titleOverride ? titleOverride : title
+        }`,
+        media: mediaSlideshow || mediaPicture || mediaVideo,
         subtitle: subtitle ? `Size: ${subtitle}` : null,
       };
     },
