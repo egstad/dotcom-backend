@@ -30,6 +30,7 @@ import pieces from "./slices/pieces";
 import richText from "./slices/text";
 import themePicker from "./slices/themePicker";
 import themeScroller from "./slices/themeScroller";
+import slideshow from "./slices/slideshow";
 import contentWork from "./slices/contentWork";
 import contentPieces from "./slices/contentPieces";
 
@@ -69,6 +70,7 @@ export default createSchema({
     richText,
     themePicker,
     themeScroller,
+    slideshow,
     contentWork,
     contentPieces,
     // siteNavigation,

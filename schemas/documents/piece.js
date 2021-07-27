@@ -1,6 +1,3 @@
-import { slugIsUnique } from "../../lib/slugIsUnique";
-import { slugify } from "../../lib/slugify";
-import Tabs from "sanity-plugin-tabs";
 import React from "react";
 import { Text } from "@sanity/ui";
 
@@ -20,36 +17,42 @@ export default {
     { name: "content", type: "contentPieces" },
     { name: "social", type: "docSocial" },
   ],
-  // fields: [
-  //   {
-  //     name: "order",
-  //     title: "Order",
-  //     type: "number",
-  //     hidden: true,
-  //   },
-  //   {
-  //     name: "content",
-  //     type: "object",
-  //     inputComponent: Tabs,
-  //     fieldsets: [
-  //       { name: "info", title: "Info", options: { sortOrder: 10 } },
-  //       { name: "content", title: "Content", options: { sortOrder: 20 } },
-  //       { name: "sharing", title: "Sharing", options: { sortOrder: 30 } },
-  //     ],
-  //     fields: [
-
-  // ],
   preview: {
     select: {
       title: "title",
-      media: "social.socialImage",
       subtitle: "slug.current",
+      type: "content.0._type",
+      mediaSlideshow: "content.0.slides.0.asset",
+      mediaPicture: "content.0.asset",
+      mediaVideo: "content.0.poster.asset",
     },
     prepare(selection) {
+      const {
+        title,
+        subtitle,
+        type,
+        mediaSlideshow,
+        mediaPicture,
+        mediaVideo,
+      } = selection;
+
+      let preface;
+      switch (type) {
+        case "slideshow":
+          preface = "📽";
+          break;
+        case "video":
+          preface = "🍿";
+          break;
+        case "picture":
+          preface = "📸";
+          break;
+      }
+
       return {
-        title: selection.title,
-        media: selection.media,
-        subtitle: selection.subtitle,
+        title: `${title}`,
+        media: mediaSlideshow || mediaPicture || mediaVideo,
+        subtitle: `${preface} ${type.toUpperCase()} • ${subtitle}`,
       };
     },
   },
