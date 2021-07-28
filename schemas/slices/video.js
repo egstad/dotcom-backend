@@ -22,6 +22,9 @@ export default {
       description:
         "Placeholder image for video. Use the same width and height as video.",
       type: "image",
+      options: {
+        metadata: ["palette"],
+      },
       name: "poster",
       validation: (Rule) =>
         Rule.error("You have to add a poster image.").required(),
@@ -55,32 +58,37 @@ export default {
           name: "autoplay",
           type: "boolean",
           title: "Autoplay",
-          description: "Play the video right away. (Default: false)",
+          description: "Play the video right away.",
+          initialValue: false,
         },
         {
           name: "loop",
           type: "boolean",
           title: "Loop",
-          description: "Loop the video when playback ends. (Default: false)",
+          description: "Loop the video when playback ends.",
+          initialValue: false,
         },
         {
           name: "mute",
           type: "boolean",
           title: "Mute",
-          description: "Mute the audio during video playback. (Default: false)",
+          description: "Mute the audio during video playback.",
+          initialValue: true,
         },
         {
           name: "controls",
           type: "boolean",
           title: "Controls",
-          description: "Show browser default controls or not. (Default: false)",
+          description: "Show browser default controls or not.",
+          initialValue: true,
         },
         {
           name: "playsinline",
           type: "boolean",
           title: "Playback Position (Playsinline)",
           description:
-            "Play the video right where it is. Don't fullscreen on mobile by default. (Default: true)",
+            "Play the video right where it is. Don't fullscreen on mobile by default.",
+          initialValue: true,
         },
       ],
     },

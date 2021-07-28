@@ -18,9 +18,9 @@ export default {
   ],
   preview: {
     select: {
-      title: "content.title",
-      media: "content.socialImage",
-      subtitle: "content.slug.current",
+      title: "title",
+      media: "social.socialImage",
+      subtitle: "slug.current",
     },
     prepare(selection) {
       return {

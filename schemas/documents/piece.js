@@ -14,7 +14,7 @@ export default {
     { name: "date", type: "docDate" },
     { name: "tags", type: "docTags" },
     { name: "clients", type: "docClients" },
-    { name: "content", type: "contentPieces" },
+    { name: "content", type: "contentPiece" },
     { name: "social", type: "docSocial" },
   ],
   preview: {

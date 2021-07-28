@@ -32,7 +32,8 @@ import themePicker from "./slices/themePicker";
 import themeScroller from "./slices/themeScroller";
 import slideshow from "./slices/slideshow";
 import contentWork from "./slices/contentWork";
-import contentPieces from "./slices/contentPieces";
+import contentPiece from "./slices/contentPiece";
+import contentPage from "./slices/contentPage";
 
 // Site Settings
 // import siteNavigation from "./slices/siteNavigation";
@@ -72,7 +73,8 @@ export default createSchema({
     themeScroller,
     slideshow,
     contentWork,
-    contentPieces,
+    contentPiece,
+    contentPage,
     // siteNavigation,
   ]),
 });
