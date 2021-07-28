@@ -23,13 +23,12 @@ export default {
   icon: MdFormatAlignLeft,
   fields: [
     {
-      name: "content",
+      name: "text",
       type: "array",
       of: [
         {
           type: "block",
           styles: [
-            { title: "H1", value: "h1" },
             { title: "H2", value: "h2" },
             { title: "H3", value: "h3" },
             { title: "H4", value: "h4" },
@@ -122,7 +121,11 @@ export default {
                   {
                     name: "item",
                     type: "reference",
-                    to: [{ type: "piece" }, { type: "page" }],
+                    to: [
+                      { type: "page" },
+                      { type: "homepage" },
+                      { type: "work" },
+                    ],
                   },
                 ],
               },

@@ -12,14 +12,14 @@ export default {
     { name: "title", type: "docTitle" },
     { name: "slug", type: "docSlug" },
     { name: "theme", type: "docTheme" },
-    // { name: "content", type: "contentWork" },
+    { name: "content", type: "contentPage" },
     { name: "social", type: "docSocial" },
   ],
   preview: {
     select: {
-      title: "content.title",
-      media: "content.socialImage",
-      subtitle: "content.slug.current",
+      title: "title",
+      media: "social.socialImage",
+      subtitle: "slug.current",
     },
     prepare(selection) {
       return {

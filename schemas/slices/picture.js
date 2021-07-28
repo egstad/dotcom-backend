@@ -6,6 +6,9 @@ export default {
   title: "Image",
   icon: MdImage,
   description: "An image",
+  options: {
+    metadata: ["palette"],
+  },
   fields: [
     {
       name: "alt",
