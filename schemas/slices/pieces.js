@@ -21,7 +21,15 @@ export default {
       type: "string",
       description: "Make it catchy",
       validation: (Rule) =>
-        Rule.max(120).warning(`A title shouldn't be more than 120 characters.`),
+        Rule.min(5)
+          .max(120)
+          .warning(`A title shouldn't be more than 120 characters.`),
+    },
+    {
+      title: "Credits",
+      name: "credits",
+      type: "docCredits",
+      description: "Add credits and/or additional info if you'd like.",
     },
     {
       title: "Width",
