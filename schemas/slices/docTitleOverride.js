@@ -22,7 +22,7 @@ export default {
   of: [
     {
       type: "block",
-      styles: [{ title: "o", value: "normal" }],
+      styles: [{ title: "Heading", value: "h2" }],
       marks: {
         decorators: [
           {
