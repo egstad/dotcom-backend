@@ -19,13 +19,13 @@ export default {
   preview: {
     select: {
       title: "title",
-      media: "social.socialImage",
+      // media: "social.socialImage",
       subtitle: "slug.current",
     },
     prepare(selection) {
       return {
         title: selection.title,
-        media: selection.media,
+        // media: selection.media,
         subtitle: selection.subtitle,
       };
     },

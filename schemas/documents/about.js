@@ -18,14 +18,14 @@ export default {
   ],
   preview: {
     select: {
-      title: "content.title",
-      media: "content.socialImage",
-      subtitle: "content.slug.current",
+      title: "title",
+      // media: "content.socialImage",
+      subtitle: "slug.current",
     },
     prepare(selection) {
       return {
         title: selection.title,
-        media: selection.media,
+        // media: selection.media,
         subtitle: selection.subtitle,
       };
     },
