@@ -11,10 +11,29 @@ export default {
   fields: [
     { name: "title", type: "docTitle" },
     { name: "slug", type: "docSlug" },
-    { name: "date", type: "docDate" },
-    { name: "tags", type: "docTags" },
-    { name: "clients", type: "docClients" },
-    { name: "content", type: "contentPiece" },
+    {
+      name: "date",
+      type: "docDate",
+      validation: (Rule) =>
+        Rule.required().error("When was this created again?"),
+    },
+    {
+      name: "tags",
+      type: "docTags",
+      validation: (Rule) => Rule.required().error("Choose a tag or two, bud!"),
+    },
+    {
+      name: "clients",
+      type: "docClients",
+      validation: (Rule) =>
+        Rule.required().error("Choose a client, pwetty pwease."),
+    },
+    {
+      name: "content",
+      type: "contentPiece",
+      validation: (Rule) =>
+        Rule.required().error("Don't forget to add some content, sweetie."),
+    },
     { name: "social", type: "docSocial" },
   ],
   preview: {

@@ -16,7 +16,7 @@ import siteSettings from "./documents/siteSettings";
 
 // Abstract, reusable document fields
 import docTitle from "./slices/docTitle";
-import docCredits from "./slices/docCredits";
+import docTitleOverride from "./slices/docTitleOverride";
 import docSlug from "./slices/docSlug";
 import docTheme from "./slices/docTheme";
 import docDate from "./slices/docDate";
@@ -58,7 +58,7 @@ export default createSchema({
 
     // modules
     docTitle,
-    docCredits,
+    docTitleOverride,
     docSlug,
     docTheme,
     docDate,

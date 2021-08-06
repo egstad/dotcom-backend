@@ -9,5 +9,4 @@ export default {
       to: [{ type: "tag" }],
     },
   ],
-  validation: (Rule) => Rule.required().error("Choose some tags, please!"),
 };

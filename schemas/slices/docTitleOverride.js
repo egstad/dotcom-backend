@@ -1,5 +1,4 @@
 // based heavily on slices/text.js
-
 import React from "react";
 import ExternalLinkRenderer from "../../components/ExternalLinkRenderer";
 import {
@@ -17,13 +16,13 @@ const highlightRender = (props) => (
 
 export default {
   title: "Credits",
-  name: "docCredits",
+  name: "docTitleOverride",
   type: "array",
   description: "Add credits and/or additional info.",
   of: [
     {
       type: "block",
-      styles: [{ title: "Normal", value: "normal" }],
+      styles: [{ title: "o", value: "normal" }],
       marks: {
         decorators: [
           {

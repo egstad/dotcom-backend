@@ -1,4 +1,5 @@
 import { MdFilter } from "react-icons/md";
+import { toPlainText } from "../../lib/portableTextToPlainText";
 
 export default {
   name: "pieces",
@@ -18,18 +19,9 @@ export default {
     {
       title: "Title",
       name: "title",
-      type: "string",
-      description: "Make it catchy",
-      validation: (Rule) =>
-        Rule.min(5)
-          .max(120)
-          .warning(`A title shouldn't be more than 120 characters.`),
-    },
-    {
-      title: "Credits",
-      name: "credits",
-      type: "docCredits",
-      description: "Add credits and/or additional info if you'd like.",
+      type: "docTitleOverride",
+      description:
+        "Custom title. Feel free to include credits, links, etc. (Note: replaces default title of piece)",
     },
     {
       title: "Width",
@@ -84,7 +76,7 @@ export default {
 
       return {
         title: `${preface} ${type.toUpperCase()} • ${
-          titleOverride ? titleOverride : title
+          titleOverride ? toPlainText(titleOverride) : title
         }`,
         media: mediaSlideshow || mediaPicture || mediaVideo,
         subtitle: subtitle ? `Size: ${subtitle}` : null,

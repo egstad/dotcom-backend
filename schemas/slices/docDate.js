@@ -7,5 +7,4 @@ export default {
     dateFormat: "YYYY-MM-DD",
     calendarTodayLabel: "Today",
   },
-  validation: (Rule) => Rule.required().warning("Choose a Date, please!"),
 };
