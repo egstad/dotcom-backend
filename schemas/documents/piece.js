@@ -26,7 +26,7 @@ export default {
       name: "clients",
       type: "docClients",
       validation: (Rule) =>
-        Rule.required().error("Choose a client, pwetty pwease."),
+        Rule.required().warning("Choose a client, pwetty pwease."),
     },
     {
       name: "content",
