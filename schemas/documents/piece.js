@@ -34,7 +34,6 @@ export default {
       validation: (Rule) =>
         Rule.required().error("Don't forget to add some content, sweetie."),
     },
-    { name: "social", type: "docSocial" },
   ],
   preview: {
     select: {
