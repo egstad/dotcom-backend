@@ -65,6 +65,9 @@ export default {
         case "picture":
           preface = "📸";
           break;
+        case "svg":
+          preface = "✍🏼";
+          break;
       }
 
       return {

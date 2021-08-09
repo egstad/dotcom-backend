@@ -26,6 +26,7 @@ import docSocial from "./slices/docSocial";
 
 // Content Slices
 import picture from "./slices/picture";
+import svg from "./slices/svg";
 import video from "./slices/video";
 import pieces from "./slices/pieces";
 import richText from "./slices/text";
@@ -55,6 +56,7 @@ export default createSchema({
     tag,
     client,
     siteSettings,
+    svg,
 
     // modules
     docTitle,
